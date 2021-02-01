@@ -18,6 +18,15 @@ route('/', 'home', function () {
 
   this.$on('.loginForm', 'submit', (e) => {
     e.preventDefault();
+
+    if (this.username === '' || this.password === '') {
+      this.errorMessage = 'Enter username and password';
+      this.username = '';
+      this.password = '';
+      this.$refresh();
+      return;
+    }
+
     const user = { username: this.username, password: this.password };
 
     fetch(URL, {
@@ -35,6 +44,7 @@ route('/', 'home', function () {
             throw new Error('Invalid username or password');
           } else {
             this.errorMessage = 'Something went wrong. Please try again';
+            this.$refresh();
             throw new Error('Something went wrong');
           }
         }

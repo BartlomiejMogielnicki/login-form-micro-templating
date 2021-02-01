@@ -28,7 +28,6 @@ button:focus {
 
 .loginForm {
   margin: 100px auto 0;
-  padding: 20px;
   width: 250px;
   height: 350px;
   display: flex;
@@ -59,7 +58,7 @@ button:focus {
   }
 
   &__submitBtn {
-    margin-top: 15px;
+    margin-top: 10px;
     background-color: $secondaryColor;
     color: #fff;
     border: 2px solid #fff;
@@ -88,7 +87,7 @@ button:focus {
 }
 
 .errorSign {
-  margin: 0 auto;
+  margin: 20px auto;
   width: 250px;
   text-align: center;
 
