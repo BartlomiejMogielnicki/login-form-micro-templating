@@ -4,17 +4,21 @@
   <meta charset="utf-8">
   <title>PureJS</title>
   <script type="text/html" id="home">
-    <h1>Start <%= where %>!</h1>
+    <h1>Log In</h1>
+    <form class="loginForm">
+      <div>
+        <label for="username">Username</label>
+        <input type="text" id="username" class="username" placeholder="Please enter a username" >
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" class="password" placeholder="Please enter a password" >
+      </div>
+      <button type="submit">Submit</button>
+    </form>
   </script>
-  <script type="text/html" id="example1">
-    <h1><%= title %></h1>
-    <% for (let i of title) { %>
-      <span><%= i %></span>
-    <% } %>
-  </script>
-  <script type="text/html" id="example2">
-    <h1><%= title %></h1>
-    <button class="my-button">Click me <%= counter %></button>
+  <script type="text/html" id="success">
+    <h1>SuccessPage</h1>
   </script>
   <script type="text/html" id="404">
     <h1>404 Not found</h1>
@@ -23,8 +27,6 @@
 <body>
   <nav>
     <a href="#">home</a>
-    <a href="#/ex1">example 1</a>
-    <a href="#/ex2">example 2</a>
   </nav>
   <div id="app"></div>
   <script src="./app.js"></script>
