@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <title>PureJS</title>
   <script type="text/html" id="home">
-    <h1>Log In</h1>
     <form class="loginForm">
-      <div>
+      <h1 class="loginForm__title">Log In</h1>
+      <div class="loginForm__section">
         <label for="username">Username</label>
-        <input type="text" id="username" class="username" placeholder="Please enter a username" >
+        <input type="text" id="username" class="loginForm__section__input username" placeholder="Please enter a username" >
       </div>
-      <div>
+      <div class="loginForm__section">
         <label for="password">Password</label>
-        <input type="password" id="password" class="password" placeholder="Please enter a password" >
+        <input type="password" id="password" class="loginForm__section__input password" placeholder="Please enter a password" >
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" class="loginForm__submitBtn">Submit</button>
     </form>
   </script>
   <script type="text/html" id="success">

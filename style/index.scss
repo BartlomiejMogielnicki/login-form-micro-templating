@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$primaryColor: #5c73f2;
+$secondaryColor: #3d58f2;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $primaryColor;
+}
+
+button {
+  padding: 7px 15px;
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+.loginForm {
+  margin: 100px auto 0;
+  padding: 20px;
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: transparent;
+  color: #fff;
+
+  &__title {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+
+  &__section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__input {
+      margin-top: 5px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__submitBtn {
+    margin-top: 15px;
+    background-color: $secondaryColor;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #fff;
+      color: $secondaryColor;
+    }
+  }
+}

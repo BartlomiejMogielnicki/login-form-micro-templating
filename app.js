@@ -1,3 +1,4 @@
+import './style/index.scss';
 import { route } from './router';
 
 const URL = 'https://zwzt-zadanie.netlify.app/api/login';
