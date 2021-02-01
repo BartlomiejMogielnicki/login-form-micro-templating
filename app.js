@@ -1,5 +1,7 @@
 import { route } from './router';
 
+const URL = 'https://zwzt-zadanie.netlify.app/api/login';
+
 route('/', 'home', function () {
   this.username = '';
   this.password = '';
@@ -13,23 +15,29 @@ route('/', 'home', function () {
   });
 
   this.$on('.loginForm', 'submit', (e) => {
-    console.log(`Form submitted with
-    username: ${this.username}
-    password: ${this.password}`);
+    e.preventDefault();
+    const user = { username: this.username, password: this.password };
+
+    fetch(URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Something went wrong');
+        }
+        return response.json();
+      })
+      .then((data) => (window.location.href = '#/success'))
+      .catch((error) => console.log(error));
   });
 });
 
 route('/success', 'success', function () {
   this.title = 'Success Page';
-});
-
-route('/ex2', 'example2', function () {
-  this.title = 'Example 2';
-  this.counter = 0;
-  this.$on('.my-button', 'click', () => {
-    this.counter += 1;
-    this.$refresh();
-  });
 });
 
 route('*', '404', function () {});
