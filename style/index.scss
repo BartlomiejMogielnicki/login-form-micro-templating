@@ -73,3 +73,29 @@ button:focus {
     }
   }
 }
+
+.welcomeScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    margin-top: 120px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 3rem;
+  }
+}
+
+.errorSign {
+  margin: 0 auto;
+  width: 250px;
+  text-align: center;
+
+  &__text {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    color: rgb(255, 0, 0);
+    line-height: 30px;
+  }
+}

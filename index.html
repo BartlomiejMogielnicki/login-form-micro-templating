@@ -16,12 +16,14 @@
       </div>
       <button type="submit" class="loginForm__submitBtn">Submit</button>
     </form>
+    <div class="errorSign">
+      <p class="errorSign__text"><%= errorMessage %></p>
+    </div>
   </script>
   <script type="text/html" id="success">
-    <nav>
-      <a href="#">home</a>
-    </nav>
-    <h1><%= title %></h1>
+    <div class="welcomeScreen">
+      <h1 class="welcomeScreen__title"><%= title %></h1>
+    </div>
   </script>
   <script type="text/html" id="404">
     <h1>404 Not found</h1>

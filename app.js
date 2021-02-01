@@ -6,6 +6,7 @@ const URL = 'https://zwzt-zadanie.netlify.app/api/login';
 route('/', 'home', function () {
   this.username = '';
   this.password = '';
+  this.errorMessage = '';
 
   this.$on('.username', 'change', (e) => {
     this.username = e.target.value;
@@ -28,17 +29,25 @@ route('/', 'home', function () {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Something went wrong');
+          if (response.status === 401) {
+            this.errorMessage = 'Invalid username or password';
+            this.$refresh();
+            throw new Error('Invalid username or password');
+          } else {
+            this.errorMessage = 'Something went wrong. Please try again';
+            throw new Error('Something went wrong');
+          }
         }
+        this.errorMessage = '';
         return response.json();
       })
-      .then((data) => (window.location.href = '#/success'))
+      .then(() => (window.location.href = '#/success'))
       .catch((error) => console.log(error));
   });
 });
 
 route('/success', 'success', function () {
-  this.title = 'Success Page';
+  this.title = 'Welcome back!';
 });
 
 route('*', '404', function () {});
