@@ -1,3 +1,6 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
+
 module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
@@ -20,4 +23,17 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html',
+    }),
+    new HtmlWebpackPartialsPlugin({
+      path: './templates/homepage.html',
+      location: 'homepage',
+    }),
+    new HtmlWebpackPartialsPlugin({
+      path: './templates/successpage.html',
+      location: 'successpage',
+    }),
+  ],
 };

@@ -52,12 +52,10 @@ route('/', 'home', function () {
         return response.json();
       })
       .then(() => (window.location.href = '#/success'))
-      .catch((error) => console.log(error));
+      .catch((error) => error);
   });
 });
 
 route('/success', 'success', function () {
   this.title = 'Welcome back!';
 });
-
-route('*', '404', function () {});

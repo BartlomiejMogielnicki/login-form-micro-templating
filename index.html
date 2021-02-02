@@ -2,36 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>PureJS</title>
-  <script type="text/html" id="home">
-    <form class="loginForm">
-      <h1 class="loginForm__title">Log In</h1>
-      <div class="loginForm__section">
-        <label for="username">Username</label>
-        <input type="text" id="username" class="loginForm__section__input username "  placeholder="Please enter a username" >
-      </div>
-      <div class="loginForm__section">
-        <label for="password">Password</label>
-        <input type="password" id="password" class="loginForm__section__input password" placeholder="Please enter a password" >
-      </div>
-      <button type="submit" class="loginForm__submitBtn">Submit</button>
-    </form>
-    <div class="errorSign">
-      <p class="errorSign__text"><%= errorMessage %></p>
-    </div>
-  </script>
-  <script type="text/html" id="success">
-    <div class="welcomeScreen">
-      <h1 class="welcomeScreen__title"><%= title %></h1>
-    </div>
-  </script>
-  <script type="text/html" id="404">
-    <h1>404 Not found</h1>
-  </script>
+  <title>Login Form with Micro Templating</title>
+  <homepage></homepage>
+  <successpage></successpage>
 </head>
 <body>
-
   <div id="app"></div>
-  <script src="./app.js"></script>
 </body>
 </html>
